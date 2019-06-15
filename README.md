@@ -95,7 +95,7 @@ dynamic Expression Problem 의 두 번째 관심사 (기존에 존재하던 Type
  )
 ```
 
-### 프로그래밍 언어 별 'extention' 
+### 프로그래밍 언어 별 'extension' 
 - [C# Extension Methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
 - [Kotlin Extensions](https://kotlinlang.org/docs/reference/extensions.html)
 - [Swift Extensions](https://docs.swift.org/swift-book/LanguageGuide/Extensions.html)
