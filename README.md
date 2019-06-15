@@ -18,6 +18,9 @@ java interface의 유사 개념이라고 할 수 있다.
 - The first argument to each method in a protocol is said to be privileged because a particular protocol implementation will be chosen for each call based on it and, more specifically, on its type.
 - Hence, protocols provide single type-based dispatch (효율적이고 웬만하면 요구사항 커버 됨. 더 많은 것이 필요하다면 multimethod)
 
+### 다른 언어에서 Protocol
+[Swift protocol](https://docs.swift.org/swift-book/LanguageGuide/Protocols.html)
+
 ### protocol definition
 ```clojure
 (defprotocol ProtocolName
