@@ -143,7 +143,7 @@ Clojure type := Java class
 ```clojure
 (defrecord MyPoint [x y])
 
-(->MyPoint 5 6
+(->MyPoint 5 6)
 
 (MyPoint/create {:x 8, :y 9})
 ```
