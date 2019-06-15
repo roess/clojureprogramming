@@ -19,7 +19,7 @@ java interface의 유사 개념이라고 할 수 있다.
 - Hence, protocols provide single type-based dispatch (효율적이고 웬만하면 요구사항 커버 됨. 더 많은 것이 필요하다면 multimethod)
 
 ### protocol definition
-```
+```clojure
 (defprotocol ProtocolName
 "documentation"
 (a-method [this arg1 arg2] "method docstring") 
@@ -31,7 +31,7 @@ java interface의 유사 개념이라고 할 수 있다.
 
 
 ### Ex.
-```
+```clojure
 (defprotocol Matrix
     "Protocol for working with 2d datastructures." 
     (lookup [matrix i j])
@@ -46,7 +46,7 @@ java interface의 유사 개념이라고 할 수 있다.
 ## Extending to Existing Types (p.266)
 dynamic Expression Problem 의 두 번째 관심사 (기존에 존재하던 Type이 새 Protocol을 impl. 하게 함)
 
-```
+```clojure
 (extend-protocol Matrix clojure.lang.IPersistentVector 
 (lookup [vov i j]
     (get-in vov [i j])) 
@@ -62,7 +62,7 @@ dynamic Expression Problem 의 두 번째 관심사 (기존에 존재하던 Type
 
 ### 잠깐 실습
 
-```
+```clojure
 (def mymatrix [[1 2 3]
                [4 5 6]
                [7 8 9]])                
@@ -79,7 +79,7 @@ dynamic Expression Problem 의 두 번째 관심사 (기존에 존재하던 Type
 
 ### extend-type
 하나의 Type이 Porotocol(들)로부터 확장되게 함 (extend several protocols to one type)
-```
+```clojure
 (extend-type AType 
     AProtocol 
     (method-from-AProtocol [this x]
@@ -116,7 +116,7 @@ Clojure type := Java class
 ### Records
 - Value semantics : immutable
 - Associative collection
-```
+```clojure
 (defrecord Point [x y])
 (assoc (Point. 3 4) :z 5)
 ;= #user.Point{:x 3, :y 4, :z 5} (let [p (assoc (Point. 3 4) :z 5)]
@@ -128,7 +128,7 @@ Clojure type := Java class
 ```
 #### Metadata support ?
 #### Readable representation 
-```
+```clojure
 #user.Point{:x 3, :y 4, :z 5}
 ```
 - record literal --> makes it just as easy to use records to store and retrieve data (in a file or database or other) 
@@ -137,7 +137,7 @@ Clojure type := Java class
 #### Constructors and factory functions
 - deftype과 defrecord는 암묵적으로 '->MyType' 형태의 factory function을 정의한다
 - Constructor가 public API 로 사용되기 보다는, factory function이 제공되는 것이 좋다.
-```
+```clojure
 (defrecord MyPoint [x y])
 
 (->MyPoint 5 6
@@ -154,7 +154,7 @@ Clojure type := Java class
 
 ### Types
 #### associative 하지 않은 type을 정의한다. 또, keyword를 accessor function으로 사용하는 pattern이 동작하지 않음
-```
+```clojure
 (deftype Point [x y]) ;= user.Point
 (.x (Point. 3 4))
 ;= 3
@@ -165,7 +165,7 @@ Clojure type := Java class
 - ^:unsynchron ized-mutable (java의 보통의 field)
 - mutalbe field 는 언제나 private -> Inline method implementation으로부터만 접근 가능
 
-```
+```clojure
 (deftype SchrödingerCat [^:unsynchronized-mutable state] clojure.lang.IDeref
   (deref [sc]
     (locking sc 
