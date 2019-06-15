@@ -154,6 +154,22 @@ Clojure type := Java class
 - 성능 (performance-sensitive)
 - but : "records are not functions"
 
+#### 지금 Protocol 얘기하다 Record 얘기 나온거잖아요?
+```clojure
+(defprotocol IAnimal
+  "the animal protocol"
+  (inner-report [o] "a report"))
+
+(defrecord Dog []
+  IAnimal
+  (inner-report [o]
+    (println "Woof Woof.\n")))
+
+(defrecord Cat []
+  IAnimal
+  (inner-report [o]
+    (println "Meow Meow.\n")))
+```
 
 ### Types
 #### associative 하지 않은 type을 정의한다. 또, keyword를 accessor function으로 사용하는 pattern이 동작하지 않음
