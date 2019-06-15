@@ -14,7 +14,7 @@ The dynamic Expression Problem 규정의 목적
 java interface의 유사 개념이라고 할 수 있다.
 - 하나 이상의 method
 - 각 메소드는 하나 이상의 argument를 가진다
-- 첫 번째 argument는 java의 this keyword에 해당한다.
+- 첫 번째 argument는 java의 this keyword에 해당한다. (같다는 얘기는 아님)
 - The first argument to each method in a protocol is said to be privileged because a particular protocol implementation will be chosen for each call based on it and, more specifically, on its type.
 - Hence, protocols provide single type-based dispatch (효율적이고 웬만하면 요구사항 커버 됨. 더 많은 것이 필요하다면 multimethod)
 
