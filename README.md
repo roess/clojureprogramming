@@ -5,7 +5,7 @@
 
 ## dynamic Expression Problem
 The dynamic Expression Problem 규정의 목적
-- 이미 있는 interface를 implementation 할 수 있는 interface 및 type 시스템을 갖춘다. (OOP 언어 대부분에서 만나는 장면)
+- 이미 있는 interface를 implementation하여 새 type을 정의할 수 있는 interface 및 type 시스템을 갖춘다. (OOP 언어 대부분에서 만나는 장면)
 - 새 interface를, 기존에 존재하던 type이 재 컴파일 없이 준수할 수 있는 방법을 제공한다. 
 
 ---
