@@ -171,10 +171,11 @@ Clojure type := Java class
     (println "Meow Meow.\n")))
 ```
 
-### Types
+### Types (p. 277)
 #### associative 하지 않은 type을 정의한다. 또, keyword를 accessor function으로 사용하는 pattern이 동작하지 않음
 ```clojure
-(deftype Point [x y]) ;= user.Point
+(deftype Point [x y]) 
+;= user.Point
 (.x (Point. 3 4))
 ;= 3
 (:x (Point. 3 4)) ;= nil
